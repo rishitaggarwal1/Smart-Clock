@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <form action="{% url 'register' %}" method="post">
+    {% csrf_token %} 
+        <div class="container">
+            <div class="card">
+                <div class="card-header text-center">
+                    <h3>Enter Your Details</h3>
+                </div>
+                <div class="card-body">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Name:</label>
+                        <input type="text" value="" class="form-control" name="name" placeholder="Enter your Name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Email:</label>
+                        <input type="email" value="" class="form-control" name="email" placeholder="Enter Your Email">
+                        <small class="form-text text-muted">We'll never share your email with anyone else.</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Username:</label>
+                        <input type="text" value="" class="form-control" name="username" placeholder="Enter your Username">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Password</label>
+                        <input type="password" value="" class="form-control" name="password" placeholder="Enter your Password">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Re-type Password</label>
+                        <input type="password" value="" class="form-control" name="re_password" placeholder="Re-type your Password">
+                    </div>
+
+                    <button type="submit" name="register_submit" class="btn btn-success float-right">Submit</button>
+                </div>
+            </div>
+        </div>
+    </form>
+{% endblock  %}
