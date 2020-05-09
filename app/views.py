@@ -17,10 +17,10 @@ def login(request):
 
 def dashboard(request):
     if request.method == "POST":
-        if request.POST['set_alarm']:
+        if 'set_alarm' in request.POST:
             return render(request, 'set_Alarm.html', {})
-        elif request.POST['add_event']:
-            return render(request, 'add_Event', {})
+        elif 'add_event' in request.POST:
+            return render(request, 'add_Event.html', {})
     return render(request, 'dashboard.html', {})
 
 
@@ -29,4 +29,8 @@ def set_Alarm(request):
 
 
 def add_Event(request):
-    return render(request, 'add_Event', {})
+    return render(request, 'add_Event.html', {})
+
+
+def reminder(request):
+    return render(request, 'reminder.html', {})

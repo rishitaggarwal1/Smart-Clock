@@ -15,6 +15,29 @@
     <div class="container">
       <a class="navbar-brand" href="{% url 'dashboard'%}">Smart-Clock</a>
     </div>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="float-right">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'set_Alarm'%}">Alarms</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'add_Event'%}">Events</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'reminder'%}">Reminder</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'home'%}">Logout</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
   </nav>
 <br>
 

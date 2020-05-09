@@ -11,13 +11,14 @@
 <br>
 <br>
     <form action="{% url 'dashboard' %}" method="post">
+    {% csrf_token %}
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-2 col-sm-2 col-md-2 col-5">
-                    <button name="set_alarm" class="btn btn-primary btn-lg">Set Alarm</button>
+                    <button value="1" name="set_alarm" class="btn btn-primary btn-lg">Set Alarm</button>
                 </div>
                 <div class="col-lg-2 col-sm-2 col-md-2 col-5">
-                    <button name="add_event" class="btn btn-success btn-lg" name="">Add Events</button>
+                    <button value="2" name="add_event" class="btn btn-success btn-lg" name="">Add Events</button>
                 </div>
             </div>
         </div>
