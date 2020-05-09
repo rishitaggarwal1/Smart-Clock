@@ -1,1 +1,129 @@
-set
+{% extends 'base1.html' %}
+
+{% block content %}
+<br>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <div class="nav-wrapper">
+                    <ul class="nav nav-pills nav-fill flex-column flex-md-row" id="tabs-text" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link mb-sm-3 mb-md-0 active" id="tabs-text-1-tab" data-toggle="tab" href="#tabs-text-1" role="tab" aria-controls="tabs-text-1" aria-selected="true">View Alarms</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link mb-sm-3 mb-md-0" id="tabs-text-2-tab" data-toggle="tab" href="#tabs-text-2" role="tab" aria-controls="tabs-text-2" aria-selected="false">Set Alarms</a>
+                        </li>
+                    </ul>
+                </div>
+                <br>
+                <div class="card shadow">
+                    <div class="card-body">
+            
+                        <div class="tab-content" id="myTabContent1" style="min-height:60vh;">
+                
+                            <!-- First Tab -->
+                            <div class="tab-pane fade show active" id="tabs-text-1" role="tabpanel" aria-labelledby="tabs-text-1-tab">
+
+                                <div class="row">
+                                    <div class="card border-primary col-md-4 text-center" style="padding:0px;">
+                                        <div class="card-header">
+                                            <h4>Alarm Name</h4>
+                                        </div>
+                                        <div class="card-body">
+                                            <svg class="bi bi-alarm" width="2em" height="2em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" d="M8 15A6 6 0 108 3a6 6 0 000 12zm0 1A7 7 0 108 2a7 7 0 000 14z" clip-rule="evenodd"/>
+  <path fill-rule="evenodd" d="M8 4.5a.5.5 0 01.5.5v4a.5.5 0 01-.053.224l-1.5 3a.5.5 0 11-.894-.448L7.5 8.882V5a.5.5 0 01.5-.5z" clip-rule="evenodd"/>
+  <path d="M.86 5.387A2.5 2.5 0 114.387 1.86 8.035 8.035 0 00.86 5.387zM11.613 1.86a2.5 2.5 0 113.527 3.527 8.035 8.035 0 00-3.527-3.527z"/>
+  <path fill-rule="evenodd" d="M11.646 14.146a.5.5 0 01.708 0l1 1a.5.5 0 01-.708.708l-1-1a.5.5 0 010-.708zm-7.292 0a.5.5 0 00-.708 0l-1 1a.5.5 0 00.708.708l1-1a.5.5 0 000-.708zM5.5.5A.5.5 0 016 0h4a.5.5 0 010 1H6a.5.5 0 01-.5-.5z" clip-rule="evenodd"/>
+  <path d="M7 1h2v2H7V1z"/>
+</svg>
+                                            <h5 class="card-title" style="margin-top:10px;">Ring At- <span style="font-weight:bold;">10:00 PM</span></h5>
+                                            <button class="btn btn-md btn-danger">Stop</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <!-- Second Tab Content -->
+                            <div class="tab-pane fade" id="tabs-text-2" role="tabpanel" aria-labelledby="tabs-text-2-tab">
+
+                                <form action="{% url 'login' %}" method="post">
+    {% csrf_token %} 
+        <div class="container">
+            <div class="card">
+                <div class="card-header text-center">
+                    <h3>Create a Alarm</h3>
+                </div>
+                <div class="card-body">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Title:</label>
+                        <input type="text" value="" class="form-control" name="username" placeholder="Enter your Username">
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label>Hours</label>
+                        <select class="form-control">
+                            <option selected disabled>Choose</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                        </select>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label>Minutes</label>
+                        <select class="form-control">
+                            <option selected disabled>Choose</option>
+                            <option value="00">00</option>
+                            <option value="05">05</option>
+                            <option value="10">10</option>
+                            <option value="15">15</option>
+                            <option value="20">20</option>
+                            <option value="25">25</option>
+                            <option value="30">30</option>
+                            <option value="35">35</option>
+                            <option value="40">40</option>
+                            <option value="45">45</option>
+                            <option value="50">50</option>
+                            <option value="55">55</option>
+                        </select>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label>AM/PM</label>
+                        <select class="form-control">
+                            <option selected disabled>Choose</option>
+                            <option value="AM">AM</option>
+                            <option value="PM">PM</option>
+                        </select>
+                        </div>
+                    </div> 
+                    <br>
+
+                    <button type="submit" name="login_submit" class="btn btn-success float-right">Submit</button>
+                </div>
+            </div>
+        </div>
+    </form>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+<br>
+<br>
+{% endblock  %}
