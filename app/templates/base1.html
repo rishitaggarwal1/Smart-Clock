@@ -29,9 +29,6 @@
               <a class="nav-link" href="{% url 'add_Event'%}">Events</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'reminder'%}">Reminder</a>
-            </li>
-            <li class="nav-item">
               <a class="nav-link" href="{% url 'home'%}">Logout</a>
             </li>
           </ul>
@@ -40,7 +37,6 @@
 
   </nav>
 <br>
-
       {% block content %}
       {% endblock  %}
 
@@ -136,7 +132,6 @@ function drawHand(ctx, pos, length, width) {
     ctx.stroke();
     ctx.rotate(-pos);
 }
-    
     </script>
   </body>
 </html>

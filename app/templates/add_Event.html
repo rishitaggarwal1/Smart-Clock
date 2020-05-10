@@ -1,1 +1,147 @@
-add
+{% extends 'base1.html' %}
+
+{% block content %}
+<br>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <div class="nav-wrapper">
+                    <ul class="nav nav-pills nav-fill flex-column flex-md-row" id="tabs-text" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link mb-sm-3 mb-md-0 active" id="tabs-text-1-tab" data-toggle="tab" href="#tabs-text-1" role="tab" aria-controls="tabs-text-1" aria-selected="true">View Events</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link mb-sm-3 mb-md-0" id="tabs-text-2-tab" data-toggle="tab" href="#tabs-text-2" role="tab" aria-controls="tabs-text-2" aria-selected="false">Add Events</a>
+                        </li>
+                    </ul>
+                </div>
+                <br>
+                <div class="card shadow">
+                    <div class="card-body">
+            
+                        <div class="tab-content" id="myTabContent1" style="min-height:60vh;">
+                
+                            <!-- First Tab -->
+                            <div class="tab-pane fade show active" id="tabs-text-1" role="tabpanel" aria-labelledby="tabs-text-1-tab">
+
+                                <div class="row">
+                                    <div class="card border-primary col-md-4 text-center" style="padding:0px;">
+                                        <div class="card-header">
+                                            <h4>Event Name</h4>
+                                        </div>
+                                        <div class="card-body">
+                                            <svg class="bi bi-volume-up" width="2em" height="2em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" d="M6.717 3.55A.5.5 0 017 4v8a.5.5 0 01-.812.39L3.825 10.5H1.5A.5.5 0 011 10V6a.5.5 0 01.5-.5h2.325l2.363-1.89a.5.5 0 01.529-.06zM6 5.04L4.312 6.39A.5.5 0 014 6.5H2v3h2a.5.5 0 01.312.11L6 10.96V5.04z" clip-rule="evenodd"/>
+  <path d="M11.536 14.01A8.473 8.473 0 0014.026 8a8.473 8.473 0 00-2.49-6.01l-.708.707A7.476 7.476 0 0113.025 8c0 2.071-.84 3.946-2.197 5.303l.708.707z"/>
+  <path d="M10.121 12.596A6.48 6.48 0 0012.025 8a6.48 6.48 0 00-1.904-4.596l-.707.707A5.483 5.483 0 0111.025 8a5.483 5.483 0 01-1.61 3.89l.706.706z"/>
+  <path d="M8.707 11.182A4.486 4.486 0 0010.025 8a4.486 4.486 0 00-1.318-3.182L8 5.525A3.489 3.489 0 019.025 8 3.49 3.49 0 018 10.475l.707.707z"/>
+</svg>
+                                            <h5 class="card-title" style="margin-top:10px;">Date- <span style="font-weight:bold;">10-Oct-2020</span></h5>
+                                            <button class="btn btn-md btn-danger">Cancel</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <!-- Second Tab Content -->
+                            <div class="tab-pane fade" id="tabs-text-2" role="tabpanel" aria-labelledby="tabs-text-2-tab">
+
+    <form action="{% url 'login' %}" method="post">
+    {% csrf_token %} 
+        <div class="container">
+            <div class="card">
+                <div class="card-header text-center">
+                    <h3>Create a Alarm</h3>
+                </div>
+                <div class="card-body">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Title:</label>
+                        <input type="text" value="" class="form-control" name="username" placeholder="Enter your Username">
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label>Date</label>
+                        <select class="form-control">
+                            <option selected disabled>Choose</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                            <option value="16">16</option>
+                            <option value="17">17</option>
+                            <option value="18">18</option>
+                            <option value="19">19</option>
+                            <option value="20">20</option>
+                            <option value="21">21</option>
+                            <option value="22">22</option>
+                            <option value="23">23</option>
+                            <option value="24">24</option>
+                            <option value="25">25</option>
+                            <option value="26">26</option>
+                            <option value="27">27</option>
+                            <option value="28">28</option>
+                            <option value="29">29</option>
+                            <option value="30">30</option>
+                            <option value="31">31</option>
+                        </select>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label>Month</label>
+                        <select class="form-control">
+                            <option selected disabled>Choose</option>
+                            <option value="Jan">Jan.</option>
+                            <option value="Feb">Feb.</option>
+                            <option value="Mar">Mar.</option>
+                            <option value="Apr">Apr.</option>
+                            <option value="May">May</option>
+                            <option value="Jun">June</option>
+                            <option value="Jul">July</option>
+                            <option value="Aug">Aug.</option>
+                            <option value="Sep">Sep.</option>
+                            <option value="Oct">Oct.</option>
+                            <option value="Nov">Nov.</option>
+                            <option value="Dec">Dec.</option>
+                        </select>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label>Year</label>
+                        <select class="form-control">
+                            <option selected disabled>Choose</option>
+                            <option value="2020">2020</option>
+                            <option value="2021">2021</option>
+                        </select>
+                        </div>
+                    </div> 
+                    <br>
+
+                    <button type="submit" name="login_submit" class="btn btn-success float-right">Submit</button>
+                </div>
+            </div>
+        </div>
+    </form>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+<br>
+<br>
+{% endblock  %}

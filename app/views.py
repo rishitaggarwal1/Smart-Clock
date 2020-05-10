@@ -30,7 +30,3 @@ def set_Alarm(request):
 
 def add_Event(request):
     return render(request, 'add_Event.html', {})
-
-
-def reminder(request):
-    return render(request, 'reminder.html', {})
